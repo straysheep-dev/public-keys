@@ -38,12 +38,13 @@ To import the public key from a keyserver:
 gpg --keyid-format long --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys '9906 9EB1 2D40 9EA9 3BD1  E52E B09D 00AE C481 71E0'
 ```
 
-To review a gpg public key / key file:
+To review a gpg public key / key file without importing it:
 ```bash
-# Note: gpg won't do anything if you don't supply any arguments, 
-# allowing you to check the key before importing or using it
+# Download the key file
 curl -LfO 'https://raw.githubusercontent.com/straysheep-dev/public-keys/main/straysheep-dev.gpg.asc'
-gpg ./straysheep-dev.gpg.asc
+
+# Use --no-keyring
+gpg --no-keyring ./straysheep-dev.gpg.asc
 ```
 
 To import the gpg public key from a file:
